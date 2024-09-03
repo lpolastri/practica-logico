@@ -61,10 +61,10 @@ posibilidadAtencion(Dia, Personas) :-
 % --------------------------------
 
 venta(dodain, dia(10, 8), [golosinas(1200), cigarrillos([jockey]), golosinas(50)]).
-venta(dodain, dia(12, 8), [bebidas(alcoholicas, 8), bebidas(noAlcoholias, 1), golosinas(10)]).
+venta(dodain, dia(12, 8), [bebidas(alcoholicas, 8), bebidas(noAlcoholicas, 1), golosinas(10)]).
 venta(martu, dia(12, 8), [golosinas(1000), cigarrillos([chesterfield, colorado, parisiennes])]).
 venta(lucas, dia(11, 8), [golosinas(600)]).
-venta(lucas, dia(18, 8), [bebidas(noAlcoholias, 2), cigarrillos([derby])]).
+venta(lucas, dia(18, 8), [bebidas(noAlcoholicas, 2), cigarrillos([derby])]).
 
 ventaImportante(golosinas(Precio)) :-
     Precio > 100.
@@ -75,7 +75,7 @@ ventaImportante(cigarrillos(Marcas)) :-
 
 ventaImportante(bebidas(alcoholicas, _)).
 
-ventaImportante(bebidas(noAlcoholias, Cantidad)) :-
+ventaImportante(bebidas(_, Cantidad)) :-
     Cantidad > 5.
 
 vendedor(Persona) :-
